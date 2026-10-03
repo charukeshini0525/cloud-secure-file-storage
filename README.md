@@ -1,34 +1,51 @@
-# Cloud-Based Secure File Storage and Data Encryption
+# 🔐 Cloud-Based Secure File Storage and Data Encryption
 
-## Project Description
+A secure cloud-based file storage application that encrypts files before uploading them to the cloud. Users can securely register, log in, upload encrypted files, download and decrypt them using a password, and delete their files.
 
-A secure web application for storing files in the cloud with encryption, authentication, and controlled file access.
+## 🚀 Features
 
-## Main Features
+- 🔐 User registration and login
+- 🔒 Client-side AES-256-GCM file encryption
+- 🔑 Password-based encryption key derivation using PBKDF2
+- ☁️ Secure cloud file storage using Supabase Storage
+- 👤 User-specific file access
+- 📂 View uploaded files
+- ⬆️ Encrypt and upload files
+- ⬇️ Decrypt and download files
+- 🗑️ Delete uploaded files
+- 🛡️ Row Level Security (RLS) for database protection
+- 🔒 Private Supabase storage bucket
+- 📱 Responsive web interface
 
-- User registration and login
-- Secure file upload
-- File encryption
-- Cloud-based file storage
-- View uploaded files
-- Secure file download and decryption
-- File deletion
-- User-specific file access
-- Authentication and authorization
+## 🏗️ System Architecture
 
-## Technologies
-
-- React
-- Node.js
-- Express.js
-- Supabase
-- PostgreSQL
-- JavaScript
-- Git
-- GitHub
-
-## Security
-
-The system is designed to protect user files using authentication, access control, and file encryption.
-
-## Project Status
+```text
+                    ┌─────────────────────┐
+                    │       User          │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │   React Frontend    │
+                    └──────────┬──────────┘
+                               │
+                 ┌─────────────┴─────────────┐
+                 │                           │
+                 ▼                           ▼
+        ┌─────────────────┐        ┌─────────────────┐
+        │ Client-Side     │        │   Supabase      │
+        │ Encryption      │        │ Authentication  │
+        │ AES-256-GCM     │        └─────────────────┘
+        └────────┬────────┘
+                 │
+                 ▼
+        ┌─────────────────┐
+        │ Supabase Storage│
+        │ Private Bucket  │
+        └─────────────────┘
+                 │
+                 ▼
+        ┌─────────────────┐
+        │   PostgreSQL    │
+        │ File Metadata   │
+        └─────────────────┘
